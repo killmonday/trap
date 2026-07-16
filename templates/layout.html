@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="仁和医院 - 专业的综合性医疗机构，为您提供优质的诊疗服务">
+    <meta name="keywords" content="仁和医院,医疗,健康,门诊,住院,体检">
+    <title>{{.Title}}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- 顶部信息栏 -->
+    <div class="top-bar">
+        <div class="container">
+            <span>📞 咨询热线：400-888-9999</span>
+            <span>🕐 门诊时间：周一至周日 8:00-17:30</span>
+            <span>📍 上海市浦东新区仁和路100号</span>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <span class="logo-icon">🏥</span>
+                    <span class="logo-text">仁和医院</span>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="/" class="{{if eq .Page "index"}}active{{end}}">首页</a>
+                <a href="/departments" class="{{if eq .Page "departments"}}active{{end}}">科室介绍</a>
+                <a href="/doctors" class="{{if eq .Page "doctors"}}active{{end}}">专家团队</a>
+                <a href="/about" class="{{if eq .Page "about"}}active{{end}}">医院简介</a>
+                <a href="/contact" class="{{if eq .Page "contact"}}active{{end}}">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main>
+        {{block "content" .}}
+        {{end}}
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>仁和医院</h3>
+                    <p>仁心仁术，和济天下。致力于为每一位患者提供最优质的医疗服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <a href="/departments">科室介绍</a>
+                    <a href="/doctors">专家团队</a>
+                    <a href="/about">医院简介</a>
+                    <a href="/contact">联系我们</a>
+                </div>
+                <div class="footer-col">
+                    <h3>联系方式</h3>
+                    <p>📞 电话：400-888-9999</p>
+                    <p>📧 邮箱：info@renhe-hospital.com</p>
+                    <p>📍 地址：上海市浦东新区仁和路100号</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 仁和医院 版权所有 | 沪ICP备2024000001号</p>
+                <span class="dev-note" data-backup-path="/backup/wwwroot.zip" hidden>运维备注：源码备份文件位于 backup 目录，请定期更新 wwwroot.zip</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

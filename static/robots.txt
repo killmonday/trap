@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /backup/
+Disallow: /config/
+Disallow: /api/
+
+# Sitemap
+Sitemap: /sitemap.xml

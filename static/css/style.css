@@ -1,0 +1,710 @@
+/* ========================================
+   仁和医院门户网站 - 主样式表
+   ======================================== */
+
+/* 基础重置 */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0066cc;
+    --primary-dark: #004d99;
+    --primary-light: #e6f0ff;
+    --accent: #00a86b;
+    --text: #333333;
+    --text-light: #666666;
+    --text-muted: #999999;
+    --bg: #f5f7fa;
+    --white: #ffffff;
+    --border: #e0e0e0;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --radius: 8px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background: var(--white);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 顶部信息栏 */
+.top-bar {
+    background: var(--primary-dark);
+    color: var(--white);
+    font-size: 13px;
+    padding: 8px 0;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* 导航栏 */
+.header {
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.logo-icon {
+    font-size: 32px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav {
+    display: flex;
+    gap: 8px;
+}
+
+.nav a {
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav a:hover,
+.nav a.active {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* 首页大横幅 */
+.hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0077dd 50%, #0099ee 100%);
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.8;
+    opacity: 0.9;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #f0f0f0;
+    color: var(--primary-dark);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.15);
+    color: var(--white);
+}
+
+/* Section 通用 */
+.section-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.section-title p {
+    color: var(--text-light);
+    font-size: 16px;
+}
+
+section {
+    padding: 72px 0;
+}
+
+/* 特色服务 */
+.features {
+    background: var(--white);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 32px 20px;
+    border-radius: var(--radius);
+    background: var(--bg);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.feature-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* 热门科室 */
+.departments-preview {
+    background: var(--bg);
+}
+
+.dept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.dept-card {
+    background: var(--white);
+    padding: 28px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.dept-card:hover {
+    transform: translateY(-2px);
+}
+
+.dept-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.dept-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.dept-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* 数据统计 */
+.stats {
+    background: var(--primary);
+    color: var(--white);
+    padding: 48px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+/* 新闻动态 */
+.news {
+    background: var(--white);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.news-card {
+    background: var(--bg);
+    padding: 24px;
+    border-radius: var(--radius);
+}
+
+.news-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.news-card h3 {
+    font-size: 17px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.news-card p {
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.read-more {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* 页面 Banner */
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-dark), #0077dd);
+    color: var(--white);
+    text-align: center;
+    padding: 56px 0;
+}
+
+.page-banner h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.page-banner p {
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+/* 内容区域 */
+.content-section {
+    padding: 56px 0;
+}
+
+/* 科室详情 */
+.dept-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.dept-detail {
+    background: var(--bg);
+    padding: 28px;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary);
+}
+
+.dept-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.dept-icon-large {
+    font-size: 40px;
+}
+
+.dept-header h3 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.dept-tag {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.dept-detail > p {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.dept-doctors {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* 医生卡片 */
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.doctor-card {
+    background: var(--bg);
+    padding: 28px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.doctor-avatar {
+    font-size: 56px;
+    margin-bottom: 14px;
+}
+
+.doctor-card h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.doctor-title {
+    font-size: 13px;
+    color: var(--primary);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.doctor-dept {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.doctor-card > p:nth-of-type(3) {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.doctor-time {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* 关于页面 */
+.about-content > * {
+    margin-bottom: 48px;
+}
+
+.about-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary);
+    display: inline-block;
+}
+
+.about-intro p {
+    color: var(--text-light);
+    line-height: 1.9;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.about-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    background: var(--bg);
+    padding: 28px;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.value-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 32px;
+    border-left: 3px solid var(--primary-light);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid var(--primary-light);
+}
+
+.year {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.timeline-item p {
+    color: var(--text-light);
+}
+
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    text-align: center;
+}
+
+.about-stat {
+    background: var(--bg);
+    padding: 24px 16px;
+    border-radius: var(--radius);
+}
+
+.about-stat .num {
+    display: block;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.about-stat span:last-child {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* 联系我们 */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.contact-info h2,
+.contact-form-wrapper h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary);
+    display: inline-block;
+}
+
+.contact-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.contact-item strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.contact-item p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* 页脚 */
+.footer {
+    background: #1a1a2e;
+    color: #ccc;
+    padding: 48px 0 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+.footer-col h3 {
+    color: var(--white);
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.footer-col a {
+    display: block;
+    color: #aaa;
+    font-size: 14px;
+    padding: 4px 0;
+}
+
+.footer-col a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .dept-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .news-grid { grid-template-columns: 1fr; }
+    .doctors-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-values { grid-template-columns: 1fr; }
+    .about-stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .top-bar .container { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .dept-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .doctors-grid { grid-template-columns: 1fr; }
+    .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
