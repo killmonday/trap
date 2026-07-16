@@ -40,7 +40,7 @@ PORT=9090 ./trap
 
 - **文件名**：`wwwroot.zip`
 - **放置路径**：`backup/wwwroot.zip`（即项目根目录下的 `backup/` 子目录）
-- **URL**：`http://<host>:8080/backup/wwwroot.zip`
+- **URL**：`http://<host>:8999/backup/wwwroot.zip`
 - **内容**：自由发挥，flag 放在解压后的任意文件中
 
 ### 制作示例
