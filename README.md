@@ -2,6 +2,8 @@
 
 基于 Golang 的医院门户网站 Web 靶场，用于 CTF 目录扫描类题目。
 
+![image-20260716131512895](README.assets/image-20260716131512895.png)
+
 ## 题目描述
 
 参赛者访问一家仿真的医院门户网站，通过信息收集（查看源码、控制台、robots.txt、目录扫描）发现隐藏的源码备份文件，下载解压后获取 flag。
@@ -15,24 +17,11 @@ go build -o trap .
 # 运行（默认端口 8080）
 ./trap
 
-# 自定义端口
+# 自定义监听端口
 PORT=9090 ./trap
 ```
 
-## 技术栈
-
-- Go 1.22+
-- 标准库 net/http + html/template + embed
-- 零外部依赖
-
-## 页面
-
-- `/` 首页
-- `/index` 首页
-- `/departments` 科室介绍
-- `/doctors` 专家团队
-- `/about` 医院简介
-- `/contact` 联系我们
+注意：本程序build时并未打包./backup目录（仅打包了html和样式文件等），所以可执行程序的目录下必须有./backup及flag压缩包，否则参赛者下载不到  http://ip:port/backup/wwwroot.zip 。
 
 ## Hint 线索
 
