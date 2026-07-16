@@ -14,14 +14,14 @@
 # 构建
 go build -o trap .
 
-# 运行（默认端口 8080）
+# 运行（默认端口 8999）
 ./trap
 
 # 自定义监听端口
 PORT=9090 ./trap
 ```
 
-注意：本程序build时并未打包./backup目录（仅打包了html和样式文件等），所以可执行程序的目录下必须有./backup及flag压缩包，否则参赛者下载不到  http://ip:port/backup/wwwroot.zip 。
+注意：本程序build时并未打包./backup目录（仅打包了html和样式文件等），所以可执行程序的目录下必须有./backup及flag压缩包，否则参赛者下载不到  http://127.0.0.1:8999/backup/wwwroot.zip 。
 
 ## Hint 线索
 
